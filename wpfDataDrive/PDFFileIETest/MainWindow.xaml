@@ -1,0 +1,82 @@
+﻿<Window x:Class="PDFFileIETest.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:ShareControl;assembly=PDFFileIETestControl"
+
+        Title="pdf批量测试" MinHeight="550"  MinWidth="740"    UseLayoutRounding="True"   ResizeMode="CanResizeWithGrip"  AllowsTransparency="False"  WindowStartupLocation="CenterScreen" WindowState="Maximized" AllowDrop="True"  BorderBrush="#aabed1" BorderThickness="0" SnapsToDevicePixels="True" Loaded="Window_Loaded" Closed="Window_Closed">
+    <Grid>
+
+        <Grid.RowDefinitions>
+            <RowDefinition  Height="auto"/>
+            <RowDefinition/>
+         
+        </Grid.RowDefinitions>
+
+        <StackPanel Orientation="Horizontal">
+            <Button x:Name="InitTable" Content="创建表" Click="InitTable_Click" Margin="0 0 10 0"/>
+            <Button x:Name="ReadFile" Content="读取pdf文件" Click="ReadFile_Click" Margin="0 0 10 0"/>
+            <TextBox x:Name="title"/>
+
+            <Button x:Name="StartTest" Content="开启测试" Click="StartTest_Click" Margin="0 0 10 0"/>
+            <Button x:Name="StartTestPart" Content="开启部分测试" Click="StartTestPart_Click" Margin="0 0 10 0"/>
+            <Button x:Name="Stop" Content="暂停" Click="Stop_Click" Margin="0 0 10 0"/>
+            <Button x:Name="ReStart" Content="重新开始" Click="ReStart_Click" Margin="0 0 10 0"/>
+
+            <Button x:Name="Learn" Content="机器学习" Click="Learn_Click" Margin="0 0 10 0"/>
+
+            <Label>通过数：</Label>
+
+            <TextBlock  x:Name="PassCount" Text="{Binding PassCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label>未通过数：</Label>
+
+            <TextBlock  x:Name="UnpassCount" Text="{Binding UnPassCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label>空白数：</Label>
+
+            <TextBlock  x:Name="UnpassEmptyCount" Text="{Binding UnpassEmptyCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label>标题不完整数：</Label>
+
+            <TextBlock  x:Name="UnpassHalfCount" Text="{Binding UnpassHalfCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+            <Label>已经定位到标题范围数：</Label>
+
+            <TextBlock  x:Name="LocationTitleRange" Text="{Binding LocationTitleRange, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+            <Label>定位到但未找出数：</Label>
+
+            <TextBlock  x:Name="CannotFindCount" Text="{Binding CannotFindCount, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+
+            <Label>通过率：</Label>
+
+            <TextBlock  x:Name="PassRate" Text="{Binding PassRate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+
+            <Label>除去图片的通过率：</Label>
+            <TextBlock  x:Name="ExceptImagePassRate" Text="{Binding ExceptImagePassRate, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            
+
+            <Label>开始时间：</Label>
+
+            <TextBlock  x:Name="StartTime" Text="{Binding StartTimeFormat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label>结束时间：</Label>
+
+            <TextBlock  x:Name="EndTime" Text="{Binding EndTimeFormat, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+            <Label>运行时长：</Label>
+
+            <TextBlock  x:Name="DuringTime" Text="{Binding DuringTime, Mode=TwoWay, UpdateSourceTrigger=PropertyChanged}"/>
+
+        </StackPanel>
+        
+        <s:FullTextDBUserControl x:Name="fulltextDBControl" Grid.Row="1"/>
+
+    </Grid>
+</Window>

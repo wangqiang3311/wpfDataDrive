@@ -1,0 +1,363 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="12.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{632F2887-7D67-47E8-92C8-7C3060129D1F}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>PDFFileIETest</RootNamespace>
+    <AssemblyName>PDFFileIETest</AssemblyName>
+    <TargetFrameworkVersion>v4.5.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <TargetFrameworkProfile />
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+    <Prefer32Bit>false</Prefer32Bit>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="commons-logging, Version=0.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\commons-logging.dll</HintPath>
+    </Reference>
+    <Reference Include="fontbox-1.8.9, Version=1.8.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\fontbox-1.8.9.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Core, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Core.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Media, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Media.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.SwingAWT, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.SwingAWT.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Text, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Text.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.OpenJDK.Util, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.OpenJDK.Util.dll</HintPath>
+    </Reference>
+    <Reference Include="IKVM.Runtime, Version=7.2.4630.5, Culture=neutral, PublicKeyToken=13235d27fcbfff58, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\IKVM.Runtime.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextAsian, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\iTextAsian.dll</HintPath>
+    </Reference>
+    <Reference Include="iTextAsianCmaps, Version=1.0.0.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\iTextAsianCmaps.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp, Version=5.5.10.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="OpenNLP, Version=1.0.6425.27539, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\OpenNLP.dll</HintPath>
+    </Reference>
+    <Reference Include="pdfbox-1.8.9, Version=1.8.9.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\pdfbox-1.8.9.dll</HintPath>
+    </Reference>
+    <Reference Include="ServiceStack.Common, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Common.Signed.4.5.12\lib\net45\ServiceStack.Common.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Interfaces, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Interfaces.4.5.12\lib\portable-wp80+sl5+net45+win8+wpa81+monotouch+monoandroid+xamarin.ios10\ServiceStack.Interfaces.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.Signed.4.5.12\lib\net45\ServiceStack.OrmLite.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.OrmLite.SqlServer, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.OrmLite.SqlServer.Signed.4.5.12\lib\net45\ServiceStack.OrmLite.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="ServiceStack.Text, Version=4.0.0.0, Culture=neutral, PublicKeyToken=e06fbc6124f57c43, processorArchitecture=MSIL">
+      <HintPath>..\packages\ServiceStack.Text.Signed.4.5.12\lib\net45\ServiceStack.Text.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="SharpEntropy, Version=1.0.6425.27539, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SharpEntropy.dll</HintPath>
+    </Reference>
+    <Reference Include="SharpWordNet, Version=1.0.6425.27539, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>dll\SharpWordNet.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="common\stringTool.cs" />
+    <Compile Include="common\Tools.cs" />
+    <Compile Include="DatabaseInit.cs" />
+    <Compile Include="Decision.cs" />
+    <Compile Include="Fetcher.cs" />
+    <Compile Include="FullTaskDataPool.cs" />
+    <Compile Include="Global.cs" />
+    <Compile Include="handles\AuthorHandle.cs" />
+    <Compile Include="handles\InfoExtract.cs" />
+    <Compile Include="handles\TitleHandle.cs" />
+    <Compile Include="handles\VolumeHandle.cs" />
+    <Compile Include="IETitle.cs" />
+    <Compile Include="lib\ITextSharpLib.cs" />
+    <Compile Include="lib\ITextSharpPDFHelp.cs" />
+    <Compile Include="lib\NLPTools.cs" />
+    <Compile Include="lib\PDFBoxLib.cs" />
+    <Compile Include="lib\PrintTextLocatins2.cs" />
+    <Compile Include="MachineStudyTest.cs" />
+    <Compile Include="model\Block.cs" />
+    <Compile Include="model\BlockInfo.cs" />
+    <Compile Include="model\HandleResult.cs" />
+    <Compile Include="model\Info.cs" />
+    <Compile Include="model\Line.cs" />
+    <Compile Include="model\Word.cs" />
+    <Compile Include="model\WordMeta.cs" />
+    <Compile Include="StaViewModel.cs" />
+    <Compile Include="TaskAdding.xaml.cs">
+      <DependentUpon>TaskAdding.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Utility\Convert.cs" />
+    <Compile Include="Utility\GifAnimation.cs" />
+    <Compile Include="Utility\GifImage.cs" />
+    <Page Include="MainWindow.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Configuration.cs" />
+    <Compile Include="DbHelper.cs" />
+    <Compile Include="MainWindow.xaml.cs">
+      <DependentUpon>MainWindow.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="Style\buttonStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\datagridStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\General.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Style\listviewStyle.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TaskAdding.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="app.config" />
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="images\ShareTaskBar.ico" />
+    <Resource Include="Skin\Icon\alldata.png" />
+    <Resource Include="Skin\Icon\alldata_active.png" />
+    <Resource Include="Skin\Icon\arrow_down.png" />
+    <Resource Include="Skin\Icon\arrow_up.png" />
+    <Resource Include="Skin\Icon\close.png" />
+    <Resource Include="Skin\Icon\dblist.png" />
+    <Resource Include="Skin\Icon\dblogo.png" />
+    <Resource Include="Skin\Icon\defaultPage.png" />
+    <Resource Include="Skin\Icon\dropdown_bg.png" />
+    <Resource Include="Skin\Icon\fiveActive.png" />
+    <Resource Include="Skin\Icon\fourActive.png" />
+    <Resource Include="Skin\Icon\fulltask.png" />
+    <Resource Include="Skin\Icon\fulltextPass.png" />
+    <Resource Include="Skin\Icon\fulltextPass_active.png" />
+    <Resource Include="Skin\Icon\help.png" />
+    <Resource Include="Skin\Icon\loginBg.png" />
+    <Resource Include="Skin\Icon\loginSetting.png" />
+    <Resource Include="Skin\Icon\login_bg.png" />
+    <Resource Include="Skin\Icon\login_button.png" />
+    <Resource Include="Skin\Icon\login_button_hover.png" />
+    <Resource Include="Skin\Icon\logo.png" />
+    <Resource Include="Skin\Icon\mailbox.png" />
+    <Resource Include="Skin\Icon\min.png" />
+    <Resource Include="Skin\Icon\mylike.png" />
+    <Resource Include="Skin\Icon\mylike_active.png" />
+    <Resource Include="Skin\Icon\pageBack.png" />
+    <Resource Include="Skin\Icon\pageBack_active.png" />
+    <Resource Include="Skin\Icon\pageforward.png" />
+    <Resource Include="Skin\Icon\pageforward_active.png" />
+    <Resource Include="Skin\Icon\pageLoaded.png" />
+    <Resource Include="Skin\Icon\pwd.png" />
+    <Resource Include="Skin\Icon\recent.png" />
+    <Resource Include="Skin\Icon\recent_active.png" />
+    <Resource Include="Skin\Icon\savePage.png" />
+    <Resource Include="Skin\Icon\savePage_active.png" />
+    <Resource Include="Skin\Icon\Share.ico" />
+    <Resource Include="Skin\Icon\ShareyTitle.ico" />
+    <Resource Include="Skin\Icon\tipMessage.png" />
+    <Resource Include="Skin\Icon\twoActive.png" />
+    <Resource Include="Skin\Icon\vline.png" />
+    <Resource Include="Skin\Icon\warn.png" />
+    <Resource Include="Skin\Images\back.png" />
+    <Resource Include="Skin\Images\backhover.png" />
+    <Resource Include="Skin\Images\back_dis.png" />
+    <Resource Include="Skin\Images\bannerUpdate.png" />
+    <Resource Include="Skin\Images\delete.png" />
+    <Resource Include="Skin\Images\deletehover.png" />
+    <Resource Include="Skin\Images\delete_dis.png" />
+    <Resource Include="Skin\Images\fulltextPass.png" />
+    <Resource Include="Skin\Images\fulltextPass_active.png" />
+    <Resource Include="Skin\Images\loading.gif" />
+    <Resource Include="Skin\Images\LoadTip.png" />
+    <Resource Include="Skin\Images\logo.png" />
+    <Resource Include="Skin\Images\love.png" />
+    <Resource Include="Skin\Images\love_hover.png" />
+    <Resource Include="Skin\Images\max.png" />
+    <Resource Include="Skin\Images\maxCliked.png" />
+    <Resource Include="Skin\Images\maxCliked_active.png" />
+    <Resource Include="Skin\Images\maxCliked_hover.png" />
+    <Resource Include="Skin\Images\max_active.png" />
+    <Resource Include="Skin\Images\max_hover.png" />
+    <Resource Include="Skin\Images\mie.png" />
+    <Resource Include="Skin\Images\mim.png" />
+    <Resource Include="Skin\Images\min.png" />
+    <Resource Include="Skin\Images\open.png" />
+    <Resource Include="Skin\Images\openhover.png" />
+    <Resource Include="Skin\Images\open_dis.png" />
+    <Resource Include="Skin\Images\pageBack.png" />
+    <Resource Include="Skin\Images\pageBack_active.png" />
+    <Resource Include="Skin\Images\pageforward.png" />
+    <Resource Include="Skin\Images\pageforward_active.png" />
+    <Resource Include="Skin\Images\review.png" />
+    <Resource Include="Skin\Images\reviewHover.png" />
+    <Resource Include="Skin\Images\review_dis.png" />
+    <Resource Include="Skin\Images\savePage.png" />
+    <Resource Include="Skin\Images\savePage_active.png" />
+    <Resource Include="Skin\Images\ShareyTitle.png" />
+    <Resource Include="Skin\Images\valid.jpg" />
+    <Resource Include="Skin\Images\xe.png" />
+    <Resource Include="Skin\Images\xm.png" />
+    <Resource Include="Skin\Images\xn.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\PDFFileIETestControl\PDFFileIETestControl.csproj">
+      <Project>{a262afd4-6a37-474e-9d7d-b53ad4ff0d5c}</Project>
+      <Name>PDFFileIETestControl</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserClient\Common\Common.csproj">
+      <Project>{62ce6796-0542-4563-b746-46c618d2be65}</Project>
+      <Name>Common</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UserClient\ResourceShare.UserClientShareyModel\Model.csproj">
+      <Project>{f40f7419-689b-4b1d-8e96-36fa4c6f3cc8}</Project>
+      <Name>Model</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="xml\Config.xml">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="dll\commons-logging.dll" />
+    <Content Include="dll\fontbox-1.8.9.dll" />
+    <Content Include="dll\IKVM.OpenJDK.Core.dll" />
+    <Content Include="dll\IKVM.OpenJDK.Media.dll" />
+    <Content Include="dll\IKVM.OpenJDK.SwingAWT.dll" />
+    <Content Include="dll\IKVM.OpenJDK.Text.dll" />
+    <Content Include="dll\IKVM.OpenJDK.Util.dll" />
+    <Content Include="dll\IKVM.Runtime.dll" />
+    <Content Include="dll\iTextAsian.dll" />
+    <Content Include="dll\iTextAsianCmaps.dll" />
+    <Content Include="dll\itextsharp.dll" />
+    <Content Include="dll\OpenNLP.dll" />
+    <Resource Include="dll\OpenNLP.xml" />
+    <Content Include="dll\pdfbox-1.8.9.dll" />
+    <Content Include="dll\SharpEntropy.dll" />
+    <Content Include="dll\SharpWordNet.dll" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

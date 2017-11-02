@@ -1,0 +1,45 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <!--GridView Header样式 去除Gridview自带的Header框-->
+    <Style TargetType="{x:Type GridViewColumnHeader}" >
+        <Setter Property="HorizontalContentAlignment" Value="Center"/>
+        <Setter Property="FrameworkElement.Visibility" Value="Hidden"/>
+        <Setter Property="Height" Value="0"></Setter>
+    </Style>
+    <!--ListView 布局样式 使图片可以横向展示-->
+    <Style  TargetType="{x:Type ListView}" >
+        <Setter Property='ItemsPanel'>
+            <Setter.Value>
+                <ItemsPanelTemplate>
+                    <!--<UniformGrid Columns="4"/>-->
+                    <WrapPanel  Width="{Binding (FrameworkElement.ActualWidth), RelativeSource={RelativeSource   AncestorType=ScrollContentPresenter}}"></WrapPanel>
+                </ItemsPanelTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <!--ListView Item样式和点击后样式模板-->
+    <ControlTemplate x:Key="ListViewItemTemplate" TargetType="ListBoxItem">
+        <Border Name="dblistListBoxItemBorder">
+            <StackPanel>
+                <GridViewRowPresenter>
+                </GridViewRowPresenter>
+            </StackPanel>
+        </Border>
+        <!--<ControlTemplate.Triggers>
+                <Trigger Property="IsSelected" Value="true">
+                    <Setter TargetName="dblistListBoxItemBorder"  Property="Background" Value="#a7cbf0"/>
+                </Trigger>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter TargetName="dblistListBoxItemBorder"  Property="Background" Value="#a7cbf0"/>
+                </Trigger>
+            </ControlTemplate.Triggers>-->
+    </ControlTemplate>
+    <!--ListView Item样式和点击后样式-->
+    <Style x:Key="{x:Type ListViewItem}"  TargetType="ListViewItem">
+        <Setter Property="Template" Value="{StaticResource ListViewItemTemplate}"/>
+        <Setter Property="FocusVisualStyle" Value="{x:Null}"></Setter>
+    </Style>
+
+</ResourceDictionary>

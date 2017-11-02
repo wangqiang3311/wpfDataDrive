@@ -1,0 +1,64 @@
+﻿<Window x:Class="ShareControl.MessageTip"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:s="clr-namespace:ShareControl"
+        Title="" MaxHeight="216" Width="350"  WindowStartupLocation="CenterOwner"   ResizeMode="NoResize"  WindowStyle="None"  AllowsTransparency="True" Icon="Images/Share.ico"   Background="White" BorderBrush="#aabed1" BorderThickness="1" MouseLeftButtonDown="Window_MouseLeftButtonDown">
+
+    <Window.Resources>
+
+        <Style TargetType="TextBlock" x:Key="formLabelStyle">
+            <Setter Property="HorizontalAlignment" Value="Right"/>
+            <Setter Property="Padding" Value="0 0 15 8"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+        </Style>
+    </Window.Resources>
+
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="32"/>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="auto"/>
+
+
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="*"/>
+            <ColumnDefinition Width="3*"/>
+        </Grid.ColumnDefinitions>
+
+
+
+        <StackPanel Background="#4592f0" Orientation="Horizontal" Grid.ColumnSpan="2">
+
+            <TextBlock Background="#4592f0"  x:Name="title"  HorizontalAlignment="Left" Width="276" FontSize="15" Foreground="White" Margin="16 0"/>
+
+            <s:ShareButton  x:Name="btnCloseWindow"  Style="{StaticResource windowBtn}" Margin="10,4,10,0" HorizontalAlignment="Right" Click="btnCloseWindow_Click">
+                <s:ShareButton.MoveBrush>
+                    <ImageBrush ImageSource="images/xm.png"/>
+                </s:ShareButton.MoveBrush>
+
+                <s:ShareButton.EnterBrush>
+                    <ImageBrush ImageSource="images/xe.png"/>
+                </s:ShareButton.EnterBrush>
+
+                <s:ShareButton.Background>
+                    <ImageBrush ImageSource="images/xn.png"/>
+                </s:ShareButton.Background>
+
+            </s:ShareButton>
+        </StackPanel>
+
+
+        <Image Grid.Row="1"/>
+
+        <StackPanel Grid.Row="1" Grid.ColumnSpan="2" x:Name="ContentContainer" VerticalAlignment="Center">
+            <TextBlock x:Name="content"  HorizontalAlignment="Center" FontSize="16"/>
+        </StackPanel>
+
+        <StackPanel Grid.Row="2"   Grid.ColumnSpan="2"  Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Bottom" Margin="0 0 0 23">
+            <Button x:Name="btnmakeSure"  Margin="0 0 12 0"  Style="{StaticResource SummitButton}" HorizontalAlignment="Center"/>
+            <Button x:Name="btnCancel"   Style="{StaticResource CancelButton}" HorizontalAlignment="Center"/>
+        </StackPanel>
+
+    </Grid>
+</Window>
